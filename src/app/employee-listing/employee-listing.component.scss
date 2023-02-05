@@ -1,0 +1,59 @@
+@import"https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap";
+.container{
+
+    padding:2%;
+    background-color:white;
+
+    .card{
+        max-width: 300px;
+        margin: 5px auto;
+        .example-card {
+            max-width: 300px;
+            margin: 4px;
+
+            mat-card-header{
+                mat-icon{
+                    float: right;
+                }
+                mat-card-title{
+                    font-family: 'Nunito Sans', sans-serif;
+                    color:#358597;
+                    font-size:15px;
+                }
+                mat-card-subtitle{
+                    font-family: 'Nunito Sans', sans-serif;
+                    color:red;
+                    font-size:10px;
+                }
+
+            }
+            mat-card-content{
+                font-family: 'Nunito Sans', sans-serif;
+                color:#000;
+                font-size:12px;
+                margin:1%;
+            }
+            .example-header-image {
+                width:15%;
+                background-image: url('/assets/person.jpeg');
+                background-size: cover;
+              }
+
+              mat-card-footer{
+                font-family: 'Nunito Sans', sans-serif;
+                color:#358597;
+                font-size:12px;
+                margin:1%;
+                span{
+                    color:red;
+                }
+
+              }
+          }
+
+
+    }
+
+
+}
+

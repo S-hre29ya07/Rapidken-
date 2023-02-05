@@ -1,0 +1,51 @@
+<div class="container col col-lg-4">
+    <form validate #loginForm="ngForm" *ngIf="formOpen"  (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Please enter your name</label>
+
+            <input  type="text" maxlength="30"maxlength="25" [(ngModel)]="name" #employeeName="ngModel" name="name" class="form-control" required [class.is-invalid]="employeeName.invalid && employeeName.touched">
+            <mat-error *ngIf="employeeName.invalid && employeeName.touched">
+                Name is Required! & must be between 30 characters
+            </mat-error>
+        </div>
+        <div class="form-group">
+            <label for="position">Please enter your position</label>
+
+            <input type="text" maxlength="25" [(ngModel)]="position" name="position"  #employeePosition="ngModel" required  class="form-control" [class.is-invalid]="employeePosition.invalid && employeePosition.touched">
+            <mat-error *ngIf="employeePosition.invalid && employeePosition.touched">
+                Position is Required! & must be between 25 characters
+            </mat-error>
+        </div>
+        <div class="form-group">
+            <label for="about"> Please enter your details</label>
+
+            <input type="text"  [(ngModel)]="about" name="about"  #employeeAbout="ngModel" required  class="form-control" [class.is-invalid]="employeeAbout.invalid && employeeAbout.touched">
+            <mat-error *ngIf="employeeAbout.invalid && employeeAbout.touched">
+                specification is Required!
+            </mat-error>
+        </div>
+        <div class="form-group">
+            <label for="joining">Please enter your joing date:</label>
+
+            <input type="date"  [(ngModel)]="joining" name="joining"  #employeeJoining="ngModel" required  class="form-control" [class.is-invalid]="employeeJoining.invalid && employeeJoining.touched">
+            <mat-error *ngIf="employeeJoining.invalid && employeeJoining.touched">
+                Joing Date is not filled!!
+            </mat-error>
+        </div>
+
+        <div class="form-group" style="margin:1%;color:#00FF00;">
+            <button  type="submit" [disabled]="loginForm.value.name==''||loginForm.value.position==''||loginForm.value.about==''||loginForm.value.joining==''" style="display:block; margin:5% auto;color:#00FF00;">Submit</button>
+        </div>
+
+    </form>
+
+    <div *ngIf="display">
+        <div class="message" >{{message}}</div>
+        <div>
+            <button type="button" class="btn btn-dark" (click)="form()">Add more</button>
+            <a type="button" class="btn btn-dark" routerLink="/employee" >View Employees</a>
+
+        </div>
+    </div>
+
+</div>
