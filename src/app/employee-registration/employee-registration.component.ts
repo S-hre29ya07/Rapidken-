@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EmployeeServiceService} from '../employee-service.service'
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-employee-registration',
   templateUrl: './employee-registration.component.html',
@@ -16,7 +16,7 @@ export class EmployeeRegistrationComponent implements OnInit {
   public formOpen = true;
   public employeeList = new Array;
   public message = "Your response is recorded";
-  constructor( private employeService : EmployeeServiceService) { }
+  constructor( private employeService : EmployeeServiceService,public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -62,5 +62,9 @@ export class EmployeeRegistrationComponent implements OnInit {
     this.display=false;
 
   }
+  goToList(){
+    this.router.navigate(['/employee']);
+    }
+
 
 }
