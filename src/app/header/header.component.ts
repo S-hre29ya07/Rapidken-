@@ -12,5 +12,13 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  goToRegistration(){
+ this.router.navigate(['/registration']);
+ }
+
+ goToList(){
+  this.router.navigate(['/employee']);
+  }
+
 
 }
