@@ -1,4 +1,4 @@
-<div class="container col col-lg-4">
+<div class="container col col-lg-4" *ngIf="isLoggedIn">
     <form validate #loginForm="ngForm" *ngIf="formOpen"  (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="name">Please enter your name</label>

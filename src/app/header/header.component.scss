@@ -1,51 +1,22 @@
 
  @import"https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap";
-.top{
-    margin:0;
-    padding:0;
-    width:100%;
-    background-color: white;
-    height:60px;
-    .head{
-
-        display: table;
-        height:60px;
-        margin:auto;
-        i{
-            margin: 0 5px;
-        }
-        span{
-            margin-left:5px;
-            font-size: 50px;
-            font-family: 'Nunito Sans', sans-serif;
-            color: #1d2322;
-        }
-
-    }
-
-
-
-
-
-
-
-    // div a{
-    //     text-decoration: none;
-    //     color:white;
-    //     font-family:  'Nunito Sans', sans-serif;
-    // }
-    // div  .active{
-    //     color: #f4a896;
-    // }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.form-inline {
+  margin-left: auto;
 }
 
-.links{
-    display:table;
-    margin:1% auto;
-    color: #f4a896;
-    a{
-        margin: 2px;
-        // color:#358597;
-    }
+button.nav-link {
+  background-color: #3498db; /* or any other color */
+  color: #fff; /* or any other color */
+}
 
+button.nav-link:hover {
+  background-color: #2980b9; /* or any other color */
+  cursor: pointer;
+}
+button.btn {
+  margin-left: 20px;
 }

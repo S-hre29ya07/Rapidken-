@@ -17,14 +17,20 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { EmployeeListingComponent } from './employee-listing/employee-listing.component';
 import { HeaderComponent } from './header/header.component';
 
-import {EmployeeServiceService} from './employee-service.service'
+import {EmployeeServiceService} from './employee-service.service';
+import { LoginComponentComponent } from './login-component/login-component.component';
+import { ListViewComponent } from './list-view/list-view.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeRegistrationComponent,
     EmployeeListingComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponentComponent,
+    ListViewComponent,
+    FooterComponentComponent
   ],
   imports: [
     BrowserModule,

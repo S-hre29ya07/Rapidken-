@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-
-
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeServiceService {
-
+  public employeeList = new Array;
+  public searchResults: any;
+  public data: BehaviorSubject<[]> = new BehaviorSubject<[]>([])
   constructor() {
   }
-
-  public employeeList = new Array;
 
   addData(employeeData){
     if(JSON.parse(localStorage.getItem('employeeList')))
@@ -36,6 +35,16 @@ export class EmployeeServiceService {
     localStorage.setItem("employeeList", JSON.stringify(this.employeeList));
 
     return this.employeeList;
+  }
+  setSearchData(value){
+    console.log(value)
+    this.data = value
+
+  }
+
+  getSearchData(){
+    console.log(this.data)
+    return this.data
   }
 
 }

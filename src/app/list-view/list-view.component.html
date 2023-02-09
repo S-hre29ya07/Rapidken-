@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Details</th>
+        <th>Joining Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employeesToDisplay ">
+        <td>{{employee.name}}</td>
+        <td>{{employee.position}}</td>
+        <td>{{employee.about}}</td>
+        <td>{{employee.joining}}</td>
+        <td>
+          <button (click)="deleteEmployee(employee)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between">
+    <button (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+    <button (click)="nextPage()" [disabled]="currentPage === pagesCount - 1">Next</button>
+  </div>
+</div>

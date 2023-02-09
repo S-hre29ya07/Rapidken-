@@ -16,9 +16,15 @@ export class EmployeeRegistrationComponent implements OnInit {
   public formOpen = true;
   public employeeList = new Array;
   public message = "Your response is recorded";
+  isLoggedIn: boolean;
   constructor( private employeService : EmployeeServiceService,public router: Router) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('isLoggedIn')) {
+      this.router.navigate(['/login']);
+    } else {
+      this.isLoggedIn = true;
+    }
   }
 
   trimSpace() {

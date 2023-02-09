@@ -1,31 +1,35 @@
+
 <div class="container col col-lg-4">
-    <div *ngIf="employeeList.length!=0">
-        <div *ngFor ="let employee of employeeList" class="card">
-            <mat-card class="example-card">
-                <mat-card-header>
-                <mat-icon role="button" style="cursor: pointer" type="button" (click)="removeEmployee(employee)">highlight_off</mat-icon>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{employee['name']}}</mat-card-title>
-                    <mat-card-subtitle>{{employee['position']}}</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    {{employee['about']}}
-                </mat-card-content>
-                <mat-card-footer>
-                   <span> Joining Date : </span>{{employee['joining']}}
-                </mat-card-footer>
-            </mat-card>
-
-        </div>
-
+  <div *ngIf="employeeList.length !== 0">
+    <div *ngFor="let employee of employeesToDisplay" class="card">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-icon role="button" style="cursor: pointer" type="button" (click)="removeEmployee(employee)">highlight_off</mat-icon>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ employee['name'] }}</mat-card-title>
+          <mat-card-subtitle>{{ employee['position'] }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          {{ employee['about'] }}
+        </mat-card-content>
+        <mat-card-footer>
+          <span>Joining Date:</span> {{ employee['joining'] }}
+        </mat-card-footer>
+      </mat-card>
     </div>
 
-    <div *ngIf="! employeeList.length" >
-        <p style="font-family: 'Nunito Sans', sans-serif;
-        color:red;
-        font-size:15px;">
-            No employee is added. Kindly add one
-        </p>
+    <div class="d-flex justify-content-between">
+      <button (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+      <button (click)="nextPage()" [disabled]="currentPage === pagesCount - 1">Next</button>
     </div>
+  </div>
+
+  <div *ngIf="!employeeList.length">
+    <p style="font-family: 'Nunito Sans', sans-serif;
+      color:red;
+      font-size:15px;">
+      No employee is added. Kindly add one
+    </p>
+  </div>
 
 </div>
