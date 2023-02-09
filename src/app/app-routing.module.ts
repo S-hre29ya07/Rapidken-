@@ -25,11 +25,11 @@ const routes: Routes = [
     component: LoginComponentComponent
   },
   {
-    path: '', redirectTo: 'registration', pathMatch: 'full'
+    path: '', redirectTo: 'login', pathMatch: 'full'
   },
   {
     path: '**',
-    component: EmployeeRegistrationComponent
+    component: ListViewComponent
   }
 
 ];
