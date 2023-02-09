@@ -1,4 +1,6 @@
 <div class="container">
+    <input type="text" placeholder="Type any name to search" [(ngModel)]="searchTerm">
+    <button class="btn btn-primary" (click)="filterEmployees()">Search</button>
   <table class="table">
     <thead class="thead-dark">
       <tr>

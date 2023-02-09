@@ -69,7 +69,7 @@ export class EmployeeRegistrationComponent implements OnInit {
 
   }
   goToList(){
-    this.router.navigate(['/employee']);
+    this.router.navigate(['/list']);
     }
 
 

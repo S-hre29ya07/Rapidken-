@@ -1,5 +1,7 @@
 
 <div class="container col col-lg-4">
+  <!-- <input type="text" placeholder="Type any name to search" [(ngModel)]="searchTerm">
+    <button class="btn btn-primary" (click)="filterEmployees()">Search</button> -->
   <div *ngIf="employeeList.length !== 0">
     <div *ngFor="let employee of employeesToDisplay" class="card">
       <mat-card class="example-card">

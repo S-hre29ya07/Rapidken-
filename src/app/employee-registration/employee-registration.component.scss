@@ -2,7 +2,7 @@
 .container{
     padding:2%;
     background-color:white;
-    border: 1px solid #00FF00;
+    border: 1px solid rgb(50, 50, 188);
     border-radius: 10px;
     form{
         margin:1%;
@@ -25,10 +25,14 @@
     .message{
         font-family: 'Nunito Sans', sans-serif;
         text-justify: auto;
-        color:#f4a896;
+        color:black;
 
     }
     div a{
         margin:5px;
     }
+    button.btn {
+      margin-left: 20px;
+    }
+
 }

@@ -11,6 +11,7 @@ export class ListViewComponent implements OnInit {
   recordsPerPage = 3;
   pagesCount = 0;
   employeesToDisplay: any[];
+  searchTerm: string;
 
   constructor( private employeService : EmployeeServiceService) { }
 
@@ -37,5 +38,10 @@ export class ListViewComponent implements OnInit {
     const startIndex = this.currentPage * this.recordsPerPage;
     const endIndex = startIndex + this.recordsPerPage;
     this.employeesToDisplay = this.employeeList.slice(startIndex, endIndex);
+    }
+    filterEmployees() {
+      this.employeesToDisplay = this.employeeList
+        .filter(employee => employee.name.toLowerCase().includes(this.searchTerm.toLowerCase()))
+        .slice(0, this.recordsPerPage);
     }
 }
