@@ -1,12 +1,16 @@
 
 <div class="container col col-lg-4">
-  <!-- <input type="text" placeholder="Type any name to search" [(ngModel)]="searchTerm">
-    <button class="btn btn-primary" (click)="filterEmployees()">Search</button> -->
+  <div class="form-group">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Type name to search">
+    <button class="btn btn-primary" (click)="search()">Search</button>
+  </div>
   <div *ngIf="employeeList.length !== 0">
     <div *ngFor="let employee of employeesToDisplay" class="card">
       <mat-card class="example-card">
         <mat-card-header>
           <mat-icon role="button" style="cursor: pointer" type="button" (click)="removeEmployee(employee)">highlight_off</mat-icon>
+          <mat-icon role="button" style="cursor: pointer" type="button" (click)="editEmployee()">edit</mat-icon>
+
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>{{ employee['name'] }}</mat-card-title>
           <mat-card-subtitle>{{ employee['position'] }}</mat-card-subtitle>
